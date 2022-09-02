@@ -93,43 +93,39 @@ $mkdir {2009..2011}-0{1..9} {2009..2011}-{10..12}
 
 
 https://www.runoob.com/linux/linux-comm-netstat.html
-### Grep commands
-
+### Grep 命令
+Grep 命令用于查找系统和日志中的错误。它是 shell 拥有的强大工具之一。
 Grep commands are useful to find the errors and debug the logs in the system. It is one of the powerful tools that shell has.
 
-| Command | Description |
+| 命令 | 描述 |
 | :- | :- |
-| grep -h ‘.zip’ file.list | . is any character | 
-| grep -h ‘^zip’ file.list | starts with zip | 
-| grep -h ‘zip$’ file.list | ends with zip | 
-| grep -h ‘^zip$’ file.list | containing only zip | 
-| grep -h ‘[^bz]zip’ file.list | not containing b and z | 
-| grep -h ‘^[A-Za-z0-9]’ file.list | file containing any valid names |
+| grep -h ‘.zip’ file.list | `.` 表示任意字符 | 
+| grep -h ‘^zip’ file.list | 以 `zip` 开头 | 
+| grep -h ‘zip$’ file.list | 以 `zip` 结尾 | 
+| grep -h ‘^zip$’ file.list | 只含有 `zip` | 
+| grep -h ‘[^bz]zip’ file.list | 不含 `b` 和 `z` | 
+| grep -h ‘^[A-Za-z0-9]’ file.list | 所有文件名有效的文件 |
 
-### Quantifiers
+### 量词
+下面是一些量词的例子：
 
-Here are some examples of quantifiers:
-
-| Command | Description |
+| 命令 | 描述 |
 | :- | :- |
-| ? | match element zero or one time | 
-| * | match an element zero or more times | 
-| + | Match an element one or more times | 
-| {} | match an element specfic number of times |
+| ? | 匹配出现 0 次或 1 次的元素 | 
+| * | 匹配出现 0 次或多次的元素 | 
+| + | 匹配出现 1 次或多次的元素 | 
+| {} | 匹配出现特定次数的元素 |
 
 ### Text processing
+文本处理是当今 IT 世界中的另一项重要任务。程序员和管理员可以使用这些命令来切片、剪切和处理文本。
 
-Text processing is another important task in the current IT world. Programmers and administrators can use the commands to dice, cut and process texts.
-
-| Command | Description |
+| 命令 | 描述 |
 | :- | :- |
-| cat -A $FILE | To find any CTRL character introduced | 
-| sort file1.txt file2.txt file3.txt > 
-final_sorted_list.txt | sort all files once | 
-| ls - l | sort -nr -k 5 | key field 5th column | 
-| sort --key=1,1 --key=2n distor.txt | key field 1,1 sort and second column sort 
-by numeric | 
-| sort foo.txt | uniq -c | to find repetition | 
+| cat -A $FILE | 显示 `$FILE` 文件的所有内容 | 
+| sort file1.txt file2.txt file3.txt > final_sorted_list.txt | 一次性将所有文件排序 | 
+| ls - l \| sort -nr -k 5 | 按指定的第 5 列进行排序 | 
+| sort --key=1,1 --key=2n distor.txt | 对第 1 列进行排序（默认按字母表顺序），对第 2 列进行数值排序 | 
+| sort foo.txt \| uniq -c | 查找重复的行并显示该行重复的次数 | 
 | cut -f 3 distro.txt | cut column 3 | 
 | cut -c 7-10 | cut character 7 - 10 | 
 | cut -d ‘:’ -f 1 /etc/password | delimiter : | 
