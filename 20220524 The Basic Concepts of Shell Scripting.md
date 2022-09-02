@@ -7,59 +7,53 @@
 [#]: publisher: " "
 [#]: url: " "
 
-有关 Shell 脚本的一些基本概念
+有关 shell 脚本的一些基本概念
 ======
 如果你希望将常规任务自动化并使你的生活更轻松，那么使用 shell 脚本是一个很好的选择。本文将向你介绍一些基本概念，这些概念将帮助你编写高效的 shell 脚本。
 
 ![Shell-scripting][1]
 shell 脚本是一种被设计用来运行 UNIX shell（命令行解释器）的计算机程序。shell 脚本的各类变种被认为是脚本语言。shell 脚本执行的典型操作包括文件操作、程序执行和文本打印。设置环境、运行程序并执行任何必要的清理或日志记录的脚本称为封装。
 
-### Identification of shell prompt
-
-You can identify whether the shell prompt on a Linux based computer is a normal or super user by looking at the symbols of the prompt in the terminal window. The ‘#’ symbol is used for a super user and the ‘$’ symbol is used for a user with standard privileges.
+### 识别 shell 命令提示符 
+你可以通过查看终端窗口中的提示符符号来识别 Linux 系统的计算机上的shell 命令提示符的用户是普通用户还是超级用户。`#` 符号用于超级用户，`$` 符号用于具有标准权限的用户。
 
 ![Figure 1: Manual of date command][2]
 
-### Basic commands
-
-The script comes with too many commands that can be executed on the terminal window to manage your computer. Details of each command can be found in the manual included with the command. To view the manual, you need to run the command:
+### 基本命令
+该脚本附带了很多可以在终端窗口上执行的命令，以管理您的计算机。每个命令的详细信息可以在该命令附带的使用手册中找到。你可以使用如下命令来查看手册：
 
 ```
 $man <command>
 ```
 
-A few frequently used commands are:
+一些常用的命令有：
 
 ```
-$date #display current date and time
-$cal #display current month calendar
-$df #displays disk usages
-$free #display memory usage
-$ls #List files and directories
-$mkdir #Creates directory
+$date # 显示当前日期和时间
+$cal # 显示当前月份日历
+$df # 显示磁盘使用情况
+$free # 显示内存使用情况
+$ls # 列出文件和目录
+$mkdir # 创建目录
 ```
 
-Each command comes with several options that can be used along with it. You can refer to the manual for more details. See Figure 1 for the output of:
+每个命令都附带了几个可以一起使用的选项。你可以参考使用手册以了解更多的细节。`$man date` 的输出如图 1 所示。
 
-```
-$man date
-```
 
-### Redirection operators
+### 重定向操作符
+当你希望捕获文件中的命令输出或重定向到文件时，可以使用重定向操作符。
 
-The redirection operator is really useful when you want to capture the output of a command in a file or redirect to a file.
 
-| Command | Description |
+| 命令 | 描述 |
 | :- | :- |
-| $ls -l /usr/bin >file | default stdout to file | 
-| $ls -l /usr/bin 2>file | redirects stderr to file | 
-| $ls -l /usr/bin > ls-output 2>&1 | redirects stderr & stdout to file | 
-| $ls -l /usr/bin &> ls-output | redirects stderr & stdout to file | 
-| $ls -l /usr/bin 2> /dev/null | /dev/null bitbucket |
+| $ls -l /usr/bin >file | 默认标准输出到文件 | 
+| $ls -l /usr/bin 2>file | 重定向标准错误到文件 | 
+| $ls -l /usr/bin > ls-output 2>&1 | 重定向标准错误和标准输出到文件 | 
+| $ls -l /usr/bin &> ls-output | 重定向标准错误和标准输出到文件 | 
+| $ls -l /usr/bin 2> /dev/null | 写入 /dev/null 丢弃输出 |
 
-## Brace expansion
-
-Brace expansion is one of the powerful options UNIX has. It helps do a lot of operations with minimal commands in a single line instruction. For example:
+### 大括号扩展
+大括号扩展是 UNIX 提供的强大选项之一。它有助于在一行指令中使用最少的命令完成大量操作。例如：
 
 ```
 $echo Front-{A,B,C}-Back
@@ -67,39 +61,38 @@ Front-A-Back, Front-B-Back, Front-C-Back
 
 $echo {Z..A}
 Z Y X W V U T S R Q P O N M L K J I H G F E D C B A
-
+```
+```
 $mkdir {2009..2011}-0{1..9} {2009..2011}-{10..12}
 ```
+这条命令会为 2009 到 2011 年里的每个月建立一个目录。
 
-This creates a directory for 12 months from 2009 to 2011.
+### 环境变量
+环境变量是一个动态命名的值，它可以影响计算机上运行的进程的行为方式。此变量是进程运行环境的一部分。
 
-### Environment variables
-
-An environment variable is a dynamic-named value that can affect the way running processes will behave on a computer. This variable is a part of the environment in which a process runs.
-
-| Command | Description |
+| 命令 | 描述 |
 | :- | :- |
-| printenv | Print part of all of the environment | 
-| set | set shell options | 
-| export | export environment to subsequently executed programs | 
-| alias | create an alias for command |
+| printenv | 打印出所有环境变量的值。 | 
+| set | 设置 shell 选项 | 
+| export | 导出环境到随后执行的程序 | 
+| alias | 为命令创建别名 |
 
-### Network commands
+### 网络命令
+网络命令对于排查网络问题和检查连接到客户机的特定端口非常有用。
 
-Network commands are very useful for troubleshooting issues on the network and to check the particular port connecting to the client.
-
-| Command | Description |
+| 命令 | 描述 |
 | :- | :- |
-| ping | Send ICMP packets | 
-| traceroute | Print route packets to a network | 
-| netstat | print network connection, routing table, 
-interface stats | 
-| ftp/lftp | Internet file transfer program | 
-| wget | Non Interactive network downloader | 
-| ssh | OpenSSH SSH Client (remote login program) | 
-| scp | secure copy | 
-| sftp | Secure File transfer program |
+| ping | 发送 ICMP（网际网路控制讯息协定）数据包 | 
+| traceroute | 打印数据包在网络中的路径 | 
+| netstat | 打印网络连接信息、路由表、接口数据 | 
+| ftp/lftp | 互联网文件传输程序 | 
+| wget | 非交互式网络下载器 | 
+| ssh | OpenSSH SSH 客户端 （远程登录程序） | 
+| scp | 安全拷贝 | 
+| sftp | 安全文件传输程序 |
 
+
+https://www.runoob.com/linux/linux-comm-netstat.html
 ### Grep commands
 
 Grep commands are useful to find the errors and debug the logs in the system. It is one of the powerful tools that shell has.
