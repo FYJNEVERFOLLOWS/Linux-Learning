@@ -7,14 +7,14 @@
 [#]: publisher: ( )
 [#]: url: ( )
 
-A beginner's guide to load balancing
 负载平衡的初学者指南
 ======
-Load balancing distributes resources to where they're needed most at
-that moment.
+负载平衡就是将资源分配到某一时刻最需要它的地方。
 ![eight stones balancing][1]
 
-When the personal computer was young, a household was likely to have one (or fewer) computers in it. Children played games on it during the day, and parents did accounting or programming or roamed through a BBS in the evening. Imagine a one-computer household today, though, and you can predict the conflict it would create. Everyone would want to use the computer at the same time, and there wouldn't be enough keyboard and mouse to go around.
+当个人电脑刚开始发展的时候，一个家庭可能只有一台（或更少）的电脑。孩子们白天玩电脑游戏，家长们晚上在业务支撑系统上做会计、编程，或者漫游。
+
+Imagine a one-computer household today, though, and you can predict the conflict it would create. Everyone would want to use the computer at the same time, and there wouldn't be enough keyboard and mouse to go around.
 
 This is, more or less, the same scenario that's been happening to the IT industry as computers have become more and more ubiquitous. Demand for services and servers has increased to the point that they could grind to a halt from overuse. Fortunately, we now have the concept of load balancing to help us handle the demand.
 
