@@ -1,78 +1,75 @@
+#! https://zhuanlan.zhihu.com/p/572369176
 [#]: subject: (A beginner's guide to load balancing)
 [#]: via: (https://opensource.com/article/21/4/load-balancing)
 [#]: author: (Seth Kenlon https://opensource.com/users/seth)
 [#]: collector: (lujun9972)
 [#]: translator: (FYJNEVERFOLLOWS)
-[#]: reviewer: ( )
-[#]: publisher: ( )
-[#]: url: ( )
+[#]: reviewer: (wxy)
+[#]: publisher: (wxy)
+[#]: url: (https://linux.cn/article-15121-1.html)
 
-负载平衡的初学者指南
+负载均衡的初学者指南
 ======
-负载平衡就是将资源分配到某一时刻最需要它的地方。
-![eight stones balancing][1]
 
-当个人电脑刚开始发展的时候，一个家庭可能只有一台（或更少）的电脑。孩子们白天玩电脑游戏，家长们晚上在业务支撑系统上做会计、编程，或者漫游。
+> 负载均衡就是将资源分配到某一时刻最需要它的地方。
 
-Imagine a one-computer household today, though, and you can predict the conflict it would create. Everyone would want to use the computer at the same time, and there wouldn't be enough keyboard and mouse to go around.
+![](https://img.linux.net.cn/data/attachment/album/202210/09/171034wvrqq5qqxkjcv5nv.jpg)
 
-This is, more or less, the same scenario that's been happening to the IT industry as computers have become more and more ubiquitous. Demand for services and servers has increased to the point that they could grind to a halt from overuse. Fortunately, we now have the concept of load balancing to help us handle the demand.
+当个人电脑刚开始发展的时候，一个家庭可能只有一台（或更少）的电脑。孩子们白天玩电脑游戏，家长们晚上在业务支撑系统上做会计、编程，或者漫游。然而，想象一下今天一个只有一台电脑的家庭，你可以预想到这样会产生什么样的冲突。每个人都想使用电脑，而只有一副键盘和鼠标。
 
-### What is load balancing?
+随着计算机变得越来越普遍，IT 行业或多或少也出现了同样的情况。对服务和服务器的需求已经增长到了会因为用量过大而停机的程度。幸运的是，我们现在有了负载均衡的概念来帮助我们处理需求。
 
-Load balancing is a generic term referring to anything you do to ensure the resources you manage are distributed efficiently. For a web server's systems administrator, load balancing usually means ensuring that the web server software (such as [Nginx][2]) is configured with enough worker nodes to handle a spike in incoming visitors. In other words, should a site suddenly become very popular and its visitor count quadruple in a matter of minutes, the software running the server must be able to respond to each visitor without any of them noticing service degradation. For simple sites, this is as simple as a one-line configuration option, but for complex sites with dynamic content and several database queries for each user, it can be a serious problem.
+### 负载均衡是什么？
 
-This problem is supposed to have been solved with cloud computing, but it's not impossible for a web app to fail to scale out when it experiences an unexpected surge.
+负载均衡是一个通用术语，指的是为了确保高效分配所管理的资源而做的事情。对于 Web 服务器的系统管理员来说，负载均衡通常意味着确保 Web 服务器软件（例如 [Nginx][2]）配置了足够的工作节点来处理激增的访客。换言之，如果一个网站突然变得非常受欢迎，其访问者在几分钟内增加了四倍，那么运行服务器的软件必须能够响应每个访问者，并不能让任何访问者发现服务质量下降。对于简单的网站，这就像修改一行配置选项一样简单，但对于具有动态内容的复杂站点，每个用户都有多个数据库查询，这可能是一个严重的问题。
 
-The important thing to keep in mind when it comes to load balancing is that distributing resources _efficiently_ doesn't necessarily mean distributing them _evenly_. Not all tasks require all available resources at all times. A smart load-balancing strategy provides resources to users and tasks only when those resources are needed. This is often the application developer's domain rather than the IT infrastructure's responsibility. Asynchronous applications are vital to ensuring that a user who walks away from the computer for a coffee break isn't occupying valuable resources on the server.
+这个问题本应随着云计算的发展而解决，但当 Web 应用程序遇到意外激增时，无法扩展也不是不可能。
 
-### How does load balancing work?
+在进行负载均衡时，需要记住的重要一点是，*高效地*分配资源并不一定意味着*平均地*分配资源。并非所有任务都在任何时候都需要所有的可用资源。一个智能的负载均衡策略仅在需要资源时才为用户和任务提供资源。这通常是应用程序开发人员的领域，而不是 IT 基础架构的责任。异步应用程序对于确保离开计算机休息的用户不占用服务器上的宝贵资源至关重要。
 
-Load balancing avoids bottlenecks by distributing a workload across multiple computational nodes. Those nodes may be physical servers in a data center, containers in a cloud, strategically placed servers enlisted for edge computing, separate Java Virtual Machines (JVMs) in a complex application framework, or daemons running on a single Linux server.
+### 负载均衡是怎么工作的？
 
-The idea is to divide a large problem into small tasks and assign each task to a dedicated computer. For a website that requires its users to log in, for instance, the website might be hosted on Server A, while the login page and all the authentication lookups that go along with it are hosted on Server B. This way, the process of a new user logging into an account doesn't steal resources from other users actively using the site.
+负载均衡通过在多个计算节点上分配工作负载来避免瓶颈。这些节点可能是数据中心中的物理服务器、云环境中的容器、用于边缘计算而战略性放置的服务器、复杂应用程序框架中的独立 Java 虚拟机（JVM），或在单个 Linux 服务器上运行的守护进程。
 
-#### Load balancing the cloud
+这个想法是把一个大问题分成几个小任务，并把每个任务分配给一台专用计算机。例如，对于一个要求用户登录的网站，该网站可能托管在服务器 A 上，而登录页面和所有随附的身份验证查询都托管在服务器 B 上。这样，新用户登录帐户时就不会占用其它使用该站点的用户的资源。
 
-Cloud computing uses [containers][3], so there aren't usually separate physical servers to handle distinct tasks (actually, there are many separate servers, but they're clustered together to act as one computational "brain"). Instead, a "pod" is created from several containers. When one pod starts to run out of resources due to its user or task load, an identical pod is generated. Pods share storage and network resources, and each pod is assigned to a compute node as it's created. Pods can be created or destroyed on demand as the load requires so that users experience consistent quality of service regardless of how many users there are.
+#### 云计算负载均衡
 
-#### Edge computing
+云计算使用 [容器][3]，因此通常没有单独的物理服务器来处理不同的任务（实际上，有许多单独的服务器，但它们被聚集在一起作为一个计算“大脑”）。相反，“<ruby>容器荚<rt>pod</rt></ruby>” 是由几个容器创建的。当一个容器荚由于其用户或任务负载而开始耗尽资源时，会生成一个相同的容器荚。容器荚共享存储和网络资源，每个容器荚在创建时被分配给一个计算节点。可以根据负载需要创建或销毁容器荚，这样无论有多少用户，用户都可以体验到一致的服务质量。
 
-[Edge computing][4] takes the physical world into account when load balancing. The cloud is naturally a distributed system, but in practice, a cloud's nodes are usually concentrated in a few data centers. The further a user is from the data center running the cloud, the more physical barriers they must overcome for optimal service. Even with fiber connections and proper load balancing, the response time of a server located 3,000 miles away is likely greater than the response time of something just 300 miles away.
+#### 边缘计算
 
-Edge computing brings compute nodes to the "edge" of the cloud in an attempt to bridge the geographic divide, forming a sort of satellite network for the cloud, so it also plays a part in a good load-balancing effort.
+[边缘计算][4] 在负载均衡时考虑到了现实世界。云计算自然是一个分布式系统，但实际上，云计算的节点通常集中在几个数据中心。用户离运行云计算的数据中心越远，他们为获得最佳服务所必须克服的物理障碍就越多。即使有光纤连接和适当的负载均衡，位于 3000 英里外的服务器的响应时间也可能比仅仅 300 英里外的响应时间长。
+   
+边缘计算将计算节点带到云计算的“边缘”，试图弥合地理鸿沟，为云计算形成一种卫星网络，因此它也在良好的负载均衡工作中发挥了作用。
 
-### What is a load-balancing algorithm?
+### 什么是负载均衡算法？
 
-There are many strategies for load balancing, and they range in complexity depending on what technology is involved and what the requirements demand. Load balancing doesn't have to be complicated, and it's important, even when using specialized software like [Kubernetes][5] or [Keepalived][6], to start load balancing from inception.
+有许多负载均衡策略，它们的复杂性取决于所涉及的技术和需求。负载均衡不必复杂，而且从一开始就负载均衡很重要，即使在使用 [Kubernetes][5] 和 [Keepalived][6] 这样的专用软件时也是如此。
 
-Don't rely on containers to balance the load when you could design your application to take simple precautions on its own. If you design your application to be modular and ephemeral from the start, then you'll benefit from the load balancing opportunities made available by clever network design, container orchestration, and whatever tomorrow's technology brings.
+当你可以设计应用程序，自己为它采取简单的预防措施时，不要依赖容器来均衡负载。如果你从一开始就将应用程序设计为模块化和临时性的，那么你将受益于通过巧妙的网络设计、容器编排和其他未来技术带来的负载均衡机会。
 
-Some popular algorithms that can guide your efforts as an application developer or network engineer include:
+可以指导应用程序开发人员或网络工程师工作的一些流行算法包括：
 
-  * Assign tasks to servers sequentially (this is often called _round-robin_).
-  * Assign tasks to the server that's currently the least busy.
-  * Assign tasks to the server with the best response time.
-  * Assign tasks randomly.
+  * 按顺序将任务分配给服务器（这通常被称为轮询调度）。
+  * 将任务分配给当前最不繁忙的服务器。
+  * 将任务分配给具有响应最快的服务器。
+  * 随机分配任务。
 
+举个例子，在分配特别复杂的任务时，可以组合或加权这些原则以分配到组中最强大的服务器。通常使用 [编排][7]，这样管理员就不必为负载均衡寻找完美的算法或策略，尽管有时需要由管理员选择使用哪种负载均衡方案组合。
 
+### 预料意料之外
 
-These principles can be combined or weighted to favor, for instance, the most powerful server in a group when assigning particularly complex tasks. [Orchestration][7] is commonly used so that an administrator doesn't have to drum up the perfect algorithm or strategy for load balancing, although sometimes it's up to the admin to choose which combination of load balancing schemes to use.
-
-### Expect the unexpected
-
-Load balancing isn't really about ensuring that all your resources are used evenly across your network. Load balancing is all about guaranteeing a reliable user experience even when the unexpected happens. Good infrastructure can withstand a computer crash, application overload, onslaught of network traffic, and user errors. Think about how your service can be resilient and design load balancing accordingly from the ground up.
+负载均衡实际上并不是要确保在整个网络中均匀使用所有资源。负载均衡实际上是确保即使发生意外情况也能提供可靠的用户体验。良好的基础设施可以承受计算机崩溃、应用程序过载、网络流量冲击和用户错误。思考你的服务如何才能具有弹性，并从头开始相应地设计负载均衡策略。
 
 --------------------------------------------------------------------------------
+本文使用 [CC BY-SA 4.0 国际协议](https://creativecommons.org/licenses/by-sa/4.0/deed.zh) 进行许可，欢迎 **遵照协议规定** 转载。
 
-via: https://opensource.com/article/21/4/load-balancing
+作者：[Seth Kenlon](https://opensource.com/users/seth) / 译者：[FYJNEVERFOLLOWS](https://github.com/FYJNEVERFOLLOWS) / 校对：[wxy](https://github.com/wxy)
 
-作者：[Seth Kenlon][a]
-选题：[lujun9972][b]
-译者：[FYJNEVERFOLLOWS](https://github.com/FYJNEVERFOLLOWS)
-校对：[校对者ID](https://github.com/校对者ID)
+原文: [A beginner's guide to load balancing](https://opensource.com/article/21/4/load-balancing)
 
-本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
+首发：[负载均衡的初学者指南](https://linux.cn/article-15121-1.html) @ [Linux中国](https://linux.cn/)
 
 [a]: https://opensource.com/users/seth
 [b]: https://github.com/lujun9972
