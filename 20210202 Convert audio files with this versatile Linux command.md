@@ -75,8 +75,7 @@ Comment（注释）        : 'Comment=Processed by SoX'
 ```
 
 #### 特效
-
-The effects chain is specified at the end of a command. It can alter audio prior to sending the data to its final destination. For instance, sometimes audio that's too loud can cause problems during conversion:
+特效可以在命令末尾指定。它可以在将数据发送到最终目的地之前更改音频。例如，有时声音太大会在转换过程中造成问题：
 
 
 ```
@@ -84,62 +83,56 @@ $ sox bad.wav bad.ogg
 sox WARN sox: `bad.ogg' output clipped 126 samples; decrease volume?
 ```
 
-Applying a **gain** effect can often solve this problem:
+应用**增益** (gain) 效果通常可以解决此问题：
 
 
 ```
 `$ sox bad.wav bad.ogg gain -1`
 ```
 
-#### Fade
+#### 淡入淡出
+另一个常用的效果是**淡入淡出**。此效果允许你定义淡入或淡出的形状，以及你希望淡入淡出效果持续的时间。
 
-Another useful effect is **fade**. This effect lets you define the shape of a fade-in or fade-out, along with how many seconds you want the fade to span.
-
-Here's an example of a six-second fade-in using an inverted parabola:
+下面是一个使用倒抛物线的 6 秒淡入示例：
 
 
 ```
 `$ sox intro.ogg intro.flac fade p 6`
 ```
 
-This applies a three-second fade-in to the head of the audio and a fade-out starting at the eight-second mark (the intro music is only 11 seconds, so the fade-out is also three-seconds in this case):
-
+这将对音频的头部应用 3 秒的淡入，并从 8 秒标记开始淡出（介绍音乐只有 11 秒，因此在这种情况下淡出也是3秒）：
 
 ```
 `$ sox intro.ogg intro.flac fade p 3 8`
 ```
 
-The different kinds of fades (sine, linear, inverted parabola, and so on), as well as the options **fade** offers (fade-in, fade-out), are listed in the **sox** man page.
+**sox** 手册页中列出了不同类型的淡入淡出（正弦、线性、倒抛物线等）以及**淡入淡出提供的选项。
 
-#### Effect syntax
+#### 特效语法
+每个特效插件都有自己的语法，因此请参阅手册页了解如何调用每个特效插件的详细信息。要做到这一点，你需要一个图形声波编辑器或数字音频工作站，例如 [LMMS][4] 或 [Rosegarden][5]。但是，如果你只想应用一次特效，可以在同一命令中将它们一起列出。
 
-Each effect plugin has its own syntax, so refer to the man page for details on how to invoke each one.
-
-Effects can be daisy-chained in one command, at least to the extent that you want to combine them. In other words, there's no syntax to apply a **flanger** effect only during a six-second fade-out. For something that precise, you need a graphical sound wave editor or a digital audio workstation such as [LMMS][4] or [Rosegarden][5]. However, if you just have effects that you want to apply once, you can list them together in the same command.
-
-This command applies a -1 **gain** effect, a tempo **stretch** of 1.35, and a **fade-out**:
+此命令应用 -1 的**增益**效果、1.35 的速度**拉伸**和**淡入淡出**：
 
 
 ```
 $ sox intro.ogg output.flac gain -1 stretch 1.35 fade p 0 6
 $ soxi output.flac
 
-Input File     : 'output.flac'
-Channels       : 1
-Sample Rate    : 44100
-Precision      : 16-bit
-Duration       : 00:00:15.10 = 665808 samples...
-File Size      : 712k
-Bit Rate       : 377k
-Sample Encoding: 16-bit FLAC
-Comment        : 'Comment=Processed by SoX'
+Input File（输入文件）     : 'output.flac'
+Channels（通道数）       : 1
+Sample Rate（采样率）    : 44100
+Precision（数据精度）      : 16-bit（16 比特）
+Duration（时长）        : 00:00:15.10 = 665808 samples...（15.10 秒 = 665808 采样点）
+File Size（文件大小）      : 712k
+Bit Rate（比特率）       : 377k
+Sample Encoding（编码格式）: 16-bit FLAC
+Comment（注释）        : 'Comment=Processed by SoX'
 ```
 
-### Combining audio
+### 组合音频
+SoX 还可以通过连接或混合音频文件来组合音频文件。
 
-SoX can also combine audio files, either by concatenating them or by mixing them.
-
-To join (or _concatenate_) files into one, provide more than one input file in your command:
+要连接（或_拼接_）文件合并为一个文件，请在命令中提供多个输入文件：
 
 
 ```
