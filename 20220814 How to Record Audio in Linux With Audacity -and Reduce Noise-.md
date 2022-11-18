@@ -7,95 +7,94 @@
 [#]: publisher: " "
 [#]: url: " "
 
-How to Record Audio in Linux With Audacity (and Reduce Noise)
+如何在 Linux 中使用 Audacity 录制音频（并降低噪音）
 ======
 
-[Audacity][1] is a free and open source cross-platform [audio editor][2]. Professionals use it for the tone of features it provides in such a small package.
+[Adacity][1] 是一个免费的开源跨平台[音频编辑器][2]。专业人士使用它是因为它提供的功能仅需安装很小的软件包。
 
-You don’t have to be a professional and use all of its features. You can use it to record audio from your microphone and do some basics like background noise removal.
+你不必成为一名专业人士并使用它的所有功能。你可以使用它从麦克风录制音频，并执行一些基本操作，如背景噪声消除。
 
-I will show you how to do that in this tutorial.
+我将在本教程中向你展示如何做到这一点。
 
-### Installing Audacity on Linux
+### 在 Linux 上安装 Audacity
 
-Installing Audacity on Linux is quite a straightforward process. Because of its popularity, it is available in the official repositories of most Linux distributions.
+在 Linux 上安装 Audacity 是一个非常简单的过程。由于其受欢迎，可以在大多数 Linux 发行版的官方存储库中找到它。
 
-You can search for it in your distribution’s software center or package manager.
+你可以在发行版的软件中心或软件包管理器中搜索它。
 
-As a terminal fan, let me share the commands for the common distros.
+作为一个终端爱好者，让我分享一下常见发行版的命令。
 
-For Debian or Ubuntu-based distributions:
+对于基于 Debian 或 Ubuntu 的发行版：
 
 ```
 sudo apt install audacity
 ```
 
-For RHEL or Fedora-based distributions:
+对于基于 RHEL 或 Fedora 的发行版：
 
 ```
 sudo dnf install audacity
 ```
 
-If you use an Arch-based distribution:
+如果你在用基于 Arch 的发行版：
 
 ```
 sudo pacman -Syu audacity
 ```
+**注意**，通过官方存储库安装可能无法获得[最新版本][3]。要获得最新版本，你可以使用 AppImage 或 Flatpak/Snap 软件包。
 
-**Note** that installing via the official repositories may not give you the [latest version][3]. To get the latest version, you may use the AppImage, or Flatpak/Snap packages.
+### 使用 Audacity 录制音频
 
-### Recording audio using Audacity
-
-Once Audacity is installed, open it from the application menu or launch it from the terminal. You will be greeted with something like this:
+安装 Audacity 后，从应用程序菜单打开它或从终端启动它。你会看到这样的界面：
 
 ![Audacity Interface][4]
-
-It is easy to start recording by clicking on the **record** button (the red dot). When you are done, click on the **stop** button (square icon) to finish. You also get a waveform preview of your recording, as shown below:
+单击**录制**按钮（红点）即可轻松开始录制。完成后，单击**停止**按钮（方形图标）来结束录制。你还可以预览录制的波形，如下所示：
 
 ![record audio with audacity][5]
 
-Then, you can check what was recorded by clicking the **play** button (the green icon).
+然后，你可以通过单击**播放**按钮（绿色图标）检查录制的内容。
 
-In case you do not see any waveform it indicates that nothing has been recorded. Probably, you have not set up your input correctly. Ensure that you have selected the correct microphone and it is not muted in the **system settings**. You can also access this from the Audacity interface.
+如果你没有看到任何波形，则表示未录制到任何内容。很可能，你没有正确设置音频输入。确保你选择了正确的麦克风，并确保在**系统设置**中其未被静音。你也可以通过 Audacity 接口设置。
 
-The recordings are not saved automatically as MP3 or other formats. **To save the recording**, you can go to File → Export and select **Export as MP3** (or any other preferred format).
+录音不会自动保存为 MP3 或其他格式。**要保存录音**，你可以转到 `File` → `Export` 并选择 `Export as MP3`（或任何其他想要的格式）。
 
-### Reducing background noise with Audacity
+### 使用 Audacity 降低背景噪声
 
-There is another fantastic feature available in Audacity which you can use to reduce white noise in recorded audio.
+Audacity 还有另一个很棒的功能，你可以使用它来减少录制音频中的白噪声。
 
-The best practice would be to not say anything for the first five seconds when you start recording with Audacity. This should give you desired background noise.
+最好的做法是在开始使用 Audacity 录制时的前五秒不要说任何话。这将为你提供所需的背景噪声。
 
-On the waveform of your audio recording, select the part you think is the background noise.
+在录制音频的波形上，选择你认为是背景噪声的部分。
 
 ![Background noise][6]
 
-With the noise part selected, go to **Effects → Noise Reduction** from the top file menu.
+选择噪声部分后，从顶部文件菜单中转到 `Effects` → `Noise Reduction`。
 
-It will open a pop-up window like this. Click on the “**Get Noise Profile**” here.
+它会像这样打开一个弹出窗口。单击此处的 `Get Noise Profile`。
 
 ![Noise Reduction Effect Popup Window][7]
 
-Now, you have got the noise profile set. Now you have to use it to reduce it from the recording.
+现在，你已经设置了噪声配置文件。现在，你必须使用它来减少录音中的噪声。
 
-Press Ctrl + A shortcut key to select the entire recording. You may also select part of it, noise will be reduced from the selected portion only.
+按 `Ctrl + A` 快捷键选择整段录音。你也可以选择其中的一部分，仅对所选部分减少噪声。
 
-With the audio track selected, again go to **Effect → Noise Reduction**.
+选择音轨后，再次转到 `Effect` → `Noise Reduction`。
 
-**Don’t click** on ‘Get Noise Profile’ this time. This time, you should be able to press the **OK** button.
+**这次不要单击** `Get Noise Profile`。这一次，你应该能够按下 `OK` 按钮。
 
-Just press the OK button and this will apply the noise reduction effect to your recording, which gets reflected on the waveform as shown below:
+只需按下 `OK` 按钮，即可将降噪效果应用到录音中，并反映在波形上，如下所示：
 
 ![Audio Waveform after Noise Reduction][8]
 
-Now the recorded audio will have less noise as compared. You can fine-tune the noise filtering while selecting the Noise Reduction effect.
+现在，相较而言，录制的音频将具有更少的噪声。你可以在选择 `Noise Reduction` 效果时微调噪声过滤。
 
-To summarize:
+总结如下：
 
-* Select the noise part, go to Effect->Noise Reduction and then click “Get Noise Profile”
-* Press Ctrl+A to select entire audio recording, go to Effect->Noise Reduction and press OK this time
+* 选择噪声部分，转到 `Effects` → `Noise Reduction`，然后单击 `Get Noise Profile`
 
-Note that you cannot remove every type of noise, but this should help nonetheless.
+* 按 `Ctrl + A` 选择整段音频录制，转到 `Effects` → `Noise Reduction`，这次按 `OK` 按钮
+
+请注意，你无法移除所有类型的噪声，但这应该会有所帮助。
 
 ### Audacity can do a lot more
 
