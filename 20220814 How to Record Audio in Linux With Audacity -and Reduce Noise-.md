@@ -96,15 +96,15 @@ Audacity 还有另一个很棒的功能，你可以使用它来减少录制音�
 
 请注意，你无法移除所有类型的噪声，但这应该会有所帮助。
 
-### Audacity can do a lot more
+### Audacity 能做更多事情
 
-Recording audio with Audacity may not seem as easy as using GNOME Sound Recorder, but it’s not overly complicated. The noise reduction feature comes in handy if you are recording voiceovers.
+使用 Audacity 录制音频可能不像使用 GNOME 录音机那样简单，但它并不太复杂。如果你正在录制画外音，降噪功能将非常有用。
 
-Audacity has a lot more features, and it is not possible to cover all of them in a single tutorial. This is why I’ll keep this short and simple.
+Audacity 有更多其他功能，不可能在一个教程中涵盖所有这些功能。这就是为什么我会保持简短的原因。
 
-If you have a problem with [Audacity’s privacy policy adjustments][9] (in 2021), try out some of the available forks.
+如果你不能接受 2021 年的 [Audacity 的隐私政策调整][9]，试试其他可用的工具。
 
-I hope this little tutorial helps you use Audacity for audio recording. Let me know if you have questions or suggestions.
+我希望这个小教程能帮助你使用 Audacity 进行音频录制。如果你有问题或建议，请告诉我。
 
 --------------------------------------------------------------------------------
 
