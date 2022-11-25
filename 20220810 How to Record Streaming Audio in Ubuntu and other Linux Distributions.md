@@ -7,74 +7,74 @@
 [#]: publisher: " "
 [#]: url: " "
 
-How to Record Streaming Audio in Ubuntu and other Linux Distributions
+如何在 Ubuntu 和其他 Linux 发行版中录制流音频
 ======
-How to record audio in Ubuntu and other Linux distributions?
+如何在 Ubuntu 和其他 Linux 发行版中录制音频？
 
-If you want to record a voice over through the microphone of your computer, you can use GNOME Sound recorder or Audacity.
+如果你想通过计算机的麦克风录制语音，可以使用 GNOME Sound Recorder 或 Audacity。
 
-Using GNOME Sound Recorder is easy but it lacks features. Audacity could be overwhelming initially but it has plenty of features for professional level recording. However, I am not going into that detail in this tutorial.
+使用 GNOME Sound Recorder 很简单，但它缺乏功能。Audacity 最初可能会让人无法抗拒，但它有很多专业级录音的功能。然而，在本教程中，我不会详细讨论这个问题。
 
-GNOME Sound Recorder works with the microphone. There is another tool called Audio recorder and you can use it to record streaming music (from Sptify, YouTube, internet radio, Skype and most other sources) apart from microphone input.
+GNOME Sound Recorder 能与麦克风配合使用。还有一个叫做 Audio recorder 的工具，除了麦克风输入，你可以使用它来录制流媒体音乐（来自 Sptify、YouTube、互联网广播、Skype 和其他大多数来源）。
 
-To summarize, I’ll show you the steps:
+总而言之，我将向你展示以下步骤：
 
-* To record sound using GNOME Sound Recorder
-* To record streaming audio using Audio Recorder
+* 使用 GNOME Sound Recorder 录制声音
+* 使用 Audio Recorder 录制流音频
 
-### Using Sound Recorder to record audio from the microphone
+### 使用 Sound Recorder 从麦克风录制音频
 
-GNOME desktop environment has a good variety of useful applications. Sound Recorder is one of them.
+GNOME 桌面环境有很多有用的应用程序。Sound Recorder 就是其中之一。
 
-You can install the [Sound Recorder][1] from the Ubuntu Software Center.
+你可以从 Ubuntu 软件中心安装 [Sound Recorder][1]。
 
 ![Sound Recorder can be installed from the Ubuntu Software Center][2]
 
-Or, you can use this command in the terminal to install it:
+或者，你可以在终端中使用此命令来安装它：
 
 ```
 sudo apt install gnome-sound-recorder
 ```
 
-Once installed, you can find it in the system menu and start from there.
+安装后，你可以在系统菜单中找到它并从那里开始。
 
 ![GNOME Sound Recorder][3]
 
-Before you start using it, you should ensure that you have the correct input source chosen in the system settings. GNOME Sound Recorder
+在开始使用它之前，应确保在系统设置中选择了正确的输入源
 
 ![Ensure that you have chosen correct input in system settings][4]
 
-Once you open the Sound Recorder application, it will show an interface like the one below.
+一打开 Sound Recorder，它将显示如下界面。
 
 ![Hit the Record button to start audio recording][5]
 
-Hit on the record button and it starts recording audio instantly. While recording, you get options to pause, stop or discord the recording.
+点击录制按钮，它立即开始录制音频。录制时，你可以选择暂停、停止或取消录制。
 
 ![Options while recording audio][6]
 
-Your recordings are saved and available from the application interface itself. Click on the saved recordings to highlight it.
+你的录音将保存并可从应用程序界面本身获得。单击保存的录音以突出显示。
 
-You can replay the recordings or delete it. You can choose to save it to another location by clicking the save/download button. You may also rename the recordings using the edit button.
+你可以回放或删除录音。你可以通过单击保存/下载按钮选择将其保存到其他位置。你也可以使用编辑按钮重命名录音。
 
 ![Saved recordings][7]
 
-That’s quite convenient, right? You can choose to record in MP3, FLAC and a couple of more formats.
+这很方便，对吧？你可以选择以 MP3、FLAC 和多种格式录制。
 
-#### Removing GNOME Sound Recorder
+#### 删除 GNOME Sound Recorder 
 
-Don’t like it or find it lacking in terms of features?
+不喜欢它或发现它缺乏功能？
 
-You can remove GNOME Sound Recorder from the Ubuntu Software Center or use the following command:
+你可以从 Ubuntu 软件中心删除 GNOME Sound Recorder 或使用以下命令：
 
 ```
 sudo apt remove gnome-sound-recorder
 ```
 
-The application of GNOME Sound recorder is limited. It only records from the microphone and this is not what you would want in certain situations.
+GNOME Sound Recorder 的应用受到限制。它只从麦克风录制，在某些情况下这不是你想要的。
 
-Imagin you want to record a Skype call or something which is playing in an application or web browser? The nifty Audio Recorder helps in such cases.
+想象一下你想录制 Skype 通话或在应用程序或网络浏览器中播放的内容？在这种情况下，漂亮的 Audio Recorder 会有所帮助。
 
-### Using Audio Recorder to record streaming audio
+### 使用 Audio Recorder 来录制流音频
 
 You can watch this video to see how to use Audio Recorder. It’s a bit old but the steps are the same.
 
