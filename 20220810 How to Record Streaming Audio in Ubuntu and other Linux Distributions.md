@@ -1,32 +1,36 @@
+#! https://zhuanlan.zhihu.com/p/594677344
 [#]: subject: "How to Record Streaming Audio in Ubuntu and other Linux Distributions"
 [#]: via: "https://itsfoss.com/record-streaming-audio/"
 [#]: author: "Abhishek Prakash https://itsfoss.com/"
 [#]: collector: "lkxed"
 [#]: translator: "FYJNEVERFOLLOWS"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-15381-1.html"
 
-如何在 Ubuntu 和其他 Linux 发行版中录制流音频
+如何在 Ubuntu 中录制流媒体音频
 ======
-如何在 Ubuntu 和其他 Linux 发行版中录制音频？
 
-如果你想通过计算机的麦克风录制语音，可以使用 GNOME Sound Recorder 或 Audacity。
+![][0]
 
-使用 GNOME Sound Recorder 很简单，但它缺乏功能。Audacity 最初可能会让人无法抗拒，但它有很多专业级录音的功能。然而，在本教程中，我不会详细讨论这个问题。
+> 如何在 Ubuntu 和其他 Linux 发行版中录制音频？
 
-GNOME Sound Recorder 能与麦克风配合使用。还有一个叫做 Audio recorder 的工具，除了麦克风输入，你可以使用它来录制流媒体音乐（来自 Sptify、YouTube、互联网广播、Skype 和其他大多数来源）。
+如果你想通过计算机的麦克风录制语音，可以使用 GNOME <ruby>录音机<rt>Sound Recorder</rt></ruby> 或 Audacity。
+
+使用 GNOME 录音机很简单，但它功能不足。Audacity 最初可能会让人无从入手，但它有很多专业级录音的功能。不过，在本教程中，我不打算详细讨论这个问题。
+
+GNOME 录音机能与麦克风配合使用。还有一个叫做 Audio recorder 的工具，除了麦克风输入，你可以使用它来录制流媒体音乐（来自 Sptify、YouTube、互联网广播、Skype 和其他大多数来源）。
 
 总而言之，我将向你展示以下步骤：
 
-* 使用 GNOME Sound Recorder 录制声音
+* 使用 GNOME 录音机录制声音
 * 使用 Audio Recorder 录制流音频
 
-### 使用 Sound Recorder 从麦克风录制音频
+### 使用 GNOME 录音机从麦克风录制音频
 
-GNOME 桌面环境有很多有用的应用程序。Sound Recorder 就是其中之一。
+GNOME 桌面环境有很多有用的应用程序，录音机就是其中之一。
 
-你可以从 Ubuntu 软件中心安装 [Sound Recorder][1]。
+你可以从 Ubuntu 软件中心安装 [录音机][1]。
 
 ![Sound Recorder can be installed from the Ubuntu Software Center][2]
 
@@ -36,53 +40,47 @@ GNOME 桌面环境有很多有用的应用程序。Sound Recorder 就是其中�
 sudo apt install gnome-sound-recorder
 ```
 
-安装后，你可以在系统菜单中找到它并从那里开始。
+安装后，你可以在系统菜单中找到它，并从那里启动它。
 
 ![GNOME Sound Recorder][3]
 
-在开始使用它之前，应确保在系统设置中选择了正确的输入源
+在开始使用它之前，应确保在系统设置中选择了正确的输入源：
 
 ![Ensure that you have chosen correct input in system settings][4]
 
-一打开 Sound Recorder，它将显示如下界面。
+打开录音机，它将显示如下界面：
 
 ![Hit the Record button to start audio recording][5]
 
-点击录制按钮，它立即开始录制音频。录制时，你可以选择暂停、停止或取消录制。
+点击“<ruby>录制<rt>Record</rt></ruby>”按钮，它立即开始录制音频。录制时，你可以选择暂停、停止或取消录制。
 
 ![Options while recording audio][6]
 
 你的录音将保存并可从应用程序界面本身获得。单击保存的录音以突出显示。
 
-你可以回放或删除录音。你可以通过单击保存/下载按钮选择将其保存到其他位置。你也可以使用编辑按钮重命名录音。
+你可以回放或删除该录音。你可以通过单击“保存/下载”按钮选择将其保存到其他位置。你也可以使用“编辑”按钮重命名该录音。
 
 ![Saved recordings][7]
 
-这很方便，对吧？你可以选择以 MP3、FLAC 和多种格式录制。
+这很方便，对吧？你可以选择以 `MP3`、`FLAC` 和多种格式录制。
 
-#### 删除 GNOME Sound Recorder 
+#### 删除 GNOME 录音机 
 
 不喜欢它或发现它缺乏功能？
 
-你可以从 Ubuntu 软件中心删除 GNOME Sound Recorder 或使用以下命令：
+你可以从 Ubuntu 软件中心删除 GNOME 录音机，或使用以下命令：
 
 ```
 sudo apt remove gnome-sound-recorder
 ```
 
-GNOME Sound Recorder 的应用受到限制。它只从麦克风录制，在某些情况下这不是你想要的。
+GNOME 录音机应用功能有限，它只从麦克风录制，在某些情况下这不是你想要的。
 
 想象一下你想录制 Skype 通话或在应用程序或网络浏览器中播放的内容？在这种情况下，漂亮的 Audio Recorder 会有所帮助。
 
-### 使用 Audio Recorder 来录制流音频
+### 使用 Audio Recorder 来录制流媒体音频
 
-You can watch this video to see how to use Audio Recorder. It’s a bit old but the steps are the same.
-
-![A Video from YouTube][8]
-
-[Subscribe to our YouTube channel for more Linux videos][9]
-
-You can use the [official PPA][10] to install Audio Recorder in Ubuntu and Linux Mint. Use the following commands in the terminal (Ctrl+Alt+T) one by one:
+你可以使用 [官方 PPA][10] 在 Ubuntu 和 LinuxMint 中安装 `Audio Recorder`。在终端中依次使用以下命令：
 
 ```
 sudo apt-add-repository ppa:audio-recorder/ppa
@@ -90,80 +88,79 @@ sudo apt update
 sudo apt install audio-recorder
 ```
 
-Alternatively, you can download the source code from [launchpad][11]. Once installed, you can start the application from the Activity Overview:
+或者，你可以从 [启动台][11] 下载源代码。安装后，你可以从“<ruby>活动概述<rt>Activity Overview</rt></ruby>”里启动应用程序：
 
 ![Audio Recorder][12]
 
-#### Record all kinds of sound from various sources
+#### 记录不同来源的各种声音
 
-Audio Recorder records all kinds of sounds your computer makes.
+Audio Recorder 记录计算机产生的各种声音。
 
-It records audio played through your system’s soundcard, microphones, browsers, webcams and more.
+它记录通过系统声卡、麦克风、浏览器、网络摄像头等播放的音频。
 
-In other words, it records even if your system sneezes (given that you want to record it). It allows you to select the recording device such as webcam, microphone, Skype, etc.
+换句话说，即使你的系统打喷嚏，它也会记录（如果你想记录的话）。它允许你选择录制设备，如网络摄像头、麦克风、Skype 等。
 
-To record the streaming music, select the appropriate source. For example, if you are playing streaming radio in Rhythmbox, then select Rythmbox.
+要录制流媒体音乐，请选择适当的源。例如，如果你正在 Rhythmbox 中播放流媒体广播，请选择 Rythmbox。
 
 ![Audio-Recorder Audio Settings][13]
 
-#### Record at your convenience
+#### 在你方便的时候录制
 
-Audio Recorder also gives you the option of setting timer. You can start, stop or pause recording at a given clock time or at a pre-defined interval. You can also set the limit on the recorded file size.
+Audio Recorder 还提供了设置计时器的选项。你可以在给定的时钟时间或预定义的间隔开始、停止或暂停录制。你还可以设置录制文件大小的限制。
 
-Moreover, you can pause (and stop) when there is no audio (or very low sound) and resume it when sound comes back.
+此外，你可以在没有音频（或声音很低）时暂停（和停止），并在声音恢复时继续。
 
-All you have to do is to edit the text in the Timer panel. Comment out the “rules” you don’t want to apply and edit the ones per your requirement.
+你所要做的就是编辑计时器面板中的文本。注释掉你不想应用的“规则”，并根据你的要求编辑这些规则。
 
 ![Audio-recorder Timer Settings][14]
 
-It provides additional settings like auto start at login, show tray icon and other record settings.
+它提供了其他设置，如登录时自动启动、显示托盘图标和其他记录设置。
 
 ![Audio-recorder Additional Settings][15]
 
-#### Save the recorded music file in various file formats
+#### 以各种文件格式保存录制的音乐文件
 
-Another gem. You can save the recorded file in your favourite file format. Supported file formats are OGG audio, Flac, MP3, SPX and WAV. I prefer MP3 for my recordings.
+另一个宝藏。你可以将录制的文件保存为你喜爱的文件格式。支持的文件格式有 OGG 音频、Flac、MP3、SPX 和 WAV。我录音时更喜欢用 MP3 格式。
 
-The **recorded files are stored in ~/Audio** i.e., in the Audio folder inside your home directory.
+录制的文件存储在 `~/Audio` 中，即主目录中的“音频”文件夹中。
 
 ![Audio-recorder Audio Formats][16]
 
-#### How good is Audio Recorder?
+#### Audio Recorder 有多好？
 
-I used Audio Recorder in Ubuntu to [record the music played on YouTube][17]. I saved a 2-minute video in MP3 format that took 934 KB of space. But I must say I was not expecting the recorded sound quality to be so good. Honestly, I could not distinguish it from the original YouTube song.
+我在 Ubuntu 中使用 Audio Recorder [录制 YouTube 上播放的音乐][17]。我用 MP3 格式保存了一段 2 分钟的视频，占用了 934 KB 的空间。但我必须说，我没想到录制的音质会这么好。老实说，我无法将它与 YouTube 上的原始歌曲区分开来。
 
-#### Removing Audio Recorder
+#### 删除 Audio Recorder
 
-If you don’t find Audio Recorder to your liking, you can remove it using the following commands:
+如果你不喜欢 Audio Recorder，可以使用以下命令将其删除：
 
 ```
 sudo apt remove audio-recorder
 ```
 
-It will be a good idea to [remove the PPA as well][18]:
+[同时删除 PPA][18] 是个好主意：
 
 ```
 sudo apt-add-repository -r ppa:audio-recorder/ppa
 ```
 
-### Conclusion
+### 结论
 
-There are probably several other tools for audio recording in Linux. Like GNOME, other desktop environments may also have sound recording apps. I know Deepin has one for sure.
+Linux 中可能还有其他几种用于音频录制的工具。像 GNOME 一样，其他桌面环境也可能有录音应用程序。我知道深度操作系统肯定有一个。
 
-GNOME Sound Recorder is a decent tool for recording sound from your microphone. For recording sound from various sources, Audio Recorder is a good choice.
+GNOME 录音机是一个不错的工具，用于从麦克风录制声音。对于录制各种来源的声音，Audio Recorder 是一个不错的选择。
 
-I hope it helps with your audio recording needs. Let me know if you have any suggestions.
+我希望这篇文章能满足你的录音需求。如果你有什么建议，请告诉我。
 
 --------------------------------------------------------------------------------
 
-via: https://itsfoss.com/record-streaming-audio/
+本文使用 [CC BY-SA 4.0 国际协议](https://creativecommons.org/licenses/by-sa/4.0/deed.zh) 进行许可，欢迎 **遵照协议规定** 转载。
 
-作者：[Abhishek Prakash][a]
-选题：[lkxed][b]
-译者：[译者ID](https://github.com/FYJNEVERFOLLOWS)
-校对：[校对者ID](https://github.com/校对者ID)
+作者：[Abhishek Prakash](https://itsfoss.com/author/abhishek-2/) / 译者：[FYJNEVERFOLLOWS](https://github.com/FYJNEVERFOLLOWS) / 校对：[wxy](https://github.com/wxy)
 
-本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
+原文: [How to Record Streaming Audio in Ubuntu and other Linux Distributions](https://itsfoss.com/record-streaming-audio/)
+
+首发：[如何在 Ubuntu 中录制流媒体音频](https://linux.cn/article-15381-1.html) @ [Linux中国](https://linux.cn/)
 
 [a]: https://itsfoss.com/
 [b]: https://github.com/lkxed
@@ -185,3 +182,4 @@ via: https://itsfoss.com/record-streaming-audio/
 [16]: https://itsfoss.com/wp-content/uploads/2022/08/audio-recorder-audio-formats.png
 [17]: https://itsfoss.com/youtube-dl-audio-only/
 [18]: https://itsfoss.com/how-to-remove-or-delete-ppas-quick-tip/
+[0]: https://img.linux.net.cn/data/attachment/album/202212/25/154829ol11lp47i8o6222c.jpg
