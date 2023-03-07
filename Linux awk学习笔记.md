@@ -1,4 +1,4 @@
-#! https://zhuanlan.zhihu.com/p/516943332
+#! https://zhuanlan.zhihu.com/p/504522741
 # Linux awk 学习笔记
 https://sites.ualberta.ca/~stothard/downloads/misc/awk_intro.txt
 
