@@ -18,9 +18,7 @@
 
 运行结果：%WER 0.00 [ 0 / 232, 0 sudo apt-get update，sudo apt-get upgradeins, 0 del, 0 sub ] exp/mono0a/decode_test_yesno/wer_10_0.0 即安装成功。
 
-![clipboard](https://tva1.sinaimg.cn/large/e6c9d24ely1h1dy9ddjz5j213a0msk0l.jpg)
-
-
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202303/20230308145603.png)
 
 Kaldi数据准备：4个文件
 
@@ -56,33 +54,34 @@ Kaldi数据准备：4个文件
 
 下载 AISHELL-1_sample.zip，解压，将所有 .wav / .txt 放到 /data/AISHELL-sample/wav (/data/AISHELL-sample/text) 文件夹
 
+统计一共有多少条音频：
+```bash
+find ./wav/ -iname "*.wav" | wc -l
+```
 ## **wav.scp**
 
-![image-20220521215129319](https://tva1.sinaimg.cn/large/e6c9d24ely1h2gd7oexndj21uo07stc8.jpg)
-
+```
+find /data/AISHELL-sample/wav -iname '*.wav' > wav.scp.temp
+```
 使用上述命令得到所有 .wav 文件的绝对路径，并写入 wav.scp.temp 文件
 
-![image-20220521220439919](https://tva1.sinaimg.cn/large/e6c9d24ely1h2gdleai0rj21o60dadll.jpg)
+TODO https://blog.csdn.net/weixin_41126303/article/details/120837111
 
 使用 awk 指定 '/' 为分隔符，过滤得到最后一个 field ($NF)，使用 sed 将 .wav 替换为空生成 wav_id 文件
 
-![image-20220521232949705](https://tva1.sinaimg.cn/large/e6c9d24ely1h2gg29fe1bj21i40c8n0q.jpg)
+TODO https://blog.csdn.net/weixin_41126303/article/details/120837111
 
 将 wav_id 和 wav.scp.temp (path 文件) 按列拼接
 
 ## text
 
-![image-20220521233134854](https://tva1.sinaimg.cn/large/e6c9d24ely1h2gg3ulhksj21qs0u0n8q.jpg)
+TODO
 
 ## utt2spk & spk2utt
 
 spk_id 的获取：
 
-![image-20220522201137473](https://tva1.sinaimg.cn/large/e6c9d24ely1h2hfy50ukhj21oi0u0teb.jpg)
-
-![image-20220522201410111](https://tva1.sinaimg.cn/large/e6c9d24ely1h2hg0qrvfuj20zk0qogrc.jpg)
-
-![image-20220522205149031](https://tva1.sinaimg.cn/large/e6c9d24ely1h2hh3wkkmij212e07wjsl.jpg)
+TODO
 
 至此，4 个文件全部准备完毕。需要对 text 中的说话内容进行分词
 

@@ -17,9 +17,9 @@ or
 awk '/gold/ {print}' coins.txt
 ```
 
-![image-20220424105154978](https://tva1.sinaimg.cn/large/e6c9d24ely1h1kmf4ubarj211c0b4goc.jpg)
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202303/20230308134514.png)
 
-![image-20220424105442594](https://tva1.sinaimg.cn/large/e6c9d24ely1h1kmi1aeypj213g0b40ud.jpg)
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202303/20230308134558.png)
 
 This example demonstrates the simplest general form of an Awk program:
 
@@ -35,8 +35,7 @@ awk '<search pattern> {<program actions>}'
 
 
 
-![image-20220423231402065](https://tva1.sinaimg.cn/large/e6c9d24ely1h1k2903m9kj21900fgjto.jpg)
-
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202303/20230308134913.png)
 NR: number of record (行数)
 
 NF: number of field (列数) [record, field 是沿用数据库里的术语]
@@ -47,37 +46,37 @@ $i: 第 i 列
 
 $0: 打印整行
 
-![image-20220423232303503](https://tva1.sinaimg.cn/large/e6c9d24ely1h1k2icm98sj20zo0u0n4u.jpg)
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202303/20230308134957.png)
 
 awk 中 的 space 只是把左右的字符串拼起来，comma 则代表加上默认分隔符（空格）
 
-![image-20220423232731202](https://tva1.sinaimg.cn/large/e6c9d24ely1h1k2mz0d1jj21620fqjvh.jpg)
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202303/20230308135023.png)
 
 awk 会把 American Eagle 当作两列而非一列
 
-![image-20220423233017974](https://tva1.sinaimg.cn/large/e6c9d24ely1h1k2pvks7yj20zs0fqgmr.jpg)
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202303/20230308135050.png)
 
-![image-20220423233215035](https://tva1.sinaimg.cn/large/e6c9d24ely1h1k2ryuk7uj210u0i0n20.jpg)
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202303/20230308135124.png)
 
 加上 if 条件
 
-![image-20220424124127091](https://tva1.sinaimg.cn/large/e6c9d24ely1h1kpl2a2cjj212g0m8jxr.jpg)
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202303/20230308135235.png)
 
 根据 NR, NF 过滤
 
-![image-20220424130636521](https://tva1.sinaimg.cn/large/e6c9d24ely1h1kqb8b8slj212i0fuae1.jpg)
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202303/20230308135616.png)
 
 修改列
 
-![image-20220424130824203](https://tva1.sinaimg.cn/large/e6c9d24ely1h1kqd3rr3qj20ul0u0dhn.jpg)
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202303/20230308135731.png)
 
 打印最后一列
 
-![image-20220424130949210](https://tva1.sinaimg.cn/large/e6c9d24ely1h1kqekks1vj20xo0fet9y.jpg)
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202303/20230308135746.png)
 
 打印倒数第二列
 
-![image-20220424131253773](https://tva1.sinaimg.cn/large/e6c9d24ely1h1kqhrtfp3j20w604iweu.jpg)
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202303/20230308135810.png)
 
 第一行要求输入，可以直接回车
 
@@ -115,7 +114,7 @@ END { val_gold = 485 * wt_gold;              # Compute value of gold.
       printf ("   Value of collection:         %7.2f\n", total); }
 ```
 
-![image-20220424144126921](https://tva1.sinaimg.cn/large/e6c9d24ely1h1kt1x9zuzj20w80eimzi.jpg)
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202303/20230308135835.png)
 
 
 
@@ -159,7 +158,7 @@ awk 中默认的 IFS（内部字段分隔符）是制表符和空格。awk 按�
 awk '/ *\$[2-9]\.[0-9][0-9] */ { print $1, $2, $3, $4, "*" ; } / *\$[0-1]\.[0-9][0-9] */ { print ; }' food_prices.list
 ```
 
-![image-20220514203151870](https://tva1.sinaimg.cn/large/e6c9d24ely1h287kpp97sj21lo0aaac8.jpg)
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202303/20230308135856.png)
 
 ``printf`` 命令可以格式化输出
 
@@ -167,7 +166,7 @@ awk '/ *\$[2-9]\.[0-9][0-9] */ { print $1, $2, $3, $4, "*" ; } / *\$[0-1]\.[0-9]
 awk '/ *\$[2-9]\.[0-9][0-9] */ { printf "%-10s %-10s %-10s %-10s\n", $1, $2, $3, $4 "*" ; } / *\$[0-1]\.[0-9][0-9] */ { printf "%-10s %-10s %-10s %-10s\n", $1, $2, $3, $4; }' food_prices.list 
 ```
 
-![image-20220514203341185](https://tva1.sinaimg.cn/large/e6c9d24ely1h287mktcacj21m20a6wh4.jpg)
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202303/20230308140017.png)
 
 `$0` 字段存储是整个行
 
@@ -185,11 +184,11 @@ awk 中的比较运算符
 
 给食物数量小于或等于 30 的物品所在行的后面加上`(**)`：
 
-![image-20220514204059297](https://tva1.sinaimg.cn/large/e6c9d24ely1h287u65c9rj21kq08y767.jpg)
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202303/20230308140136.png)
 
 通过在行的末尾增加 (TRUE) 来标记数量小于等于20的行：
 
-![image-20220514204226682](https://tva1.sinaimg.cn/large/e6c9d24ely1h287vp15zgj21lu09ytao.jpg)
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202303/20230308140512.png)
 
 
 
@@ -199,7 +198,7 @@ awk 中的比较运算符
 
 打印出价格超过 $20 且其种类为 “Tech” 的物品，在其行末用 (*) 打上标记。
 
-![image-20220515223310183](https://tva1.sinaimg.cn/large/e6c9d24ely1h29gp8pw08j21u60eoae6.jpg)
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202303/20230308140543.png)
 
 
 
@@ -207,7 +206,7 @@ awk 中的比较运算符
 
 `next` 命令告诉 awk 跳过你所提供的所有剩下的模式和表达式，直接处理下一个输入行。
 
-![image-20220516104828557](https://tva1.sinaimg.cn/large/e6c9d24ely1h2a1yakt9lj21qo0hqtcp.jpg)
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202303/20230308140615.png)
 
 上例中，`next` 命令类似 C 语言中的 `break` 命令，避免不必要的条件判断。
 
@@ -215,23 +214,23 @@ awk 中的比较运算符
 
 ## Part 7 - How to Read Awk Input from STDIN in Linux
 
-![image-20220516105449370](https://tva1.sinaimg.cn/large/e6c9d24ely1h2a24vwc1dj20uo0a6gnj.jpg)
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202303/20230308140649.png)
 
 我们使用 `dir -l` 命令的输出作为 awk 命令的输入，这样就可以打印出文件拥有者的用户名，所属组组名以及在当前路径下他／她拥有的文件。
 
-![image-20220516110239091](https://tva1.sinaimg.cn/large/e6c9d24ely1h2a2d1ilrwj210204gt9d.jpg)
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202303/20230308140718.png)
 
 在 awk 命令里使用一个表达式筛选出字符串来打印出属于 root 用户的文件。
 
-![image-20220516211233364](https://tva1.sinaimg.cn/large/e6c9d24ely1h2ajzo96ljj215i0ek429.jpg)
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202303/20230308140816.png)
 
 
 
 ## Part 8 - Learn How to Use Awk Variables, Numeric Expressions and Assignment Operators
 
-![image-20220516212216662](https://tva1.sinaimg.cn/large/e6c9d24ely1h2ak9r7g4pj21pu0betau.jpg)
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202303/20230308140826.png)
 
-![image-20220516212300091](https://tva1.sinaimg.cn/large/e6c9d24ely1h2akahvnopj21hi04q75l.jpg)
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202303/20230308140930.png)
 
 如果想要计算出域名 tecmint.com 在文件中出现的次数，我们就可以通过写一个简单的脚本实现这个功能：
 
@@ -254,7 +253,7 @@ exit 0
 
 该脚本中的 `counter=counter+1` 亦可替换为 `counter+=1`
 
-![image-20220516215157023](https://tva1.sinaimg.cn/large/e6c9d24ely1h2al4m9svoj20qg0pmq5e.jpg)
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202303/20230308140943.png)
 
 
 
@@ -295,7 +294,7 @@ done
 exit 0
 ```
 
-![image-20220517140912785](https://tva1.sinaimg.cn/large/e6c9d24ely1h2bddgddo7j20wc0l4wh9.jpg)
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202303/20230308140953.png)
 
 
 
