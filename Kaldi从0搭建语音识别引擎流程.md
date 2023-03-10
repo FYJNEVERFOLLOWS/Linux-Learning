@@ -2,7 +2,7 @@
 
 # Kaldi 环境搭建
 
-需要在Linux上完成Kaldi的安装
+需要在 Linux 上完成 Kaldi 的安装
 
 下载链接
 
@@ -16,7 +16,7 @@
 
 运行命令：```sudo ./run.sh```
 
-运行结果：%WER 0.00 [ 0 / 232, 0 sudo apt-get update，sudo apt-get upgradeins, 0 del, 0 sub ] exp/mono0a/decode_test_yesno/wer_10_0.0 即安装成功。
+运行结果：```%WER 0.00 [ 0 / 232, 0 sudo apt-get update，sudo apt-get upgradeins, 0 del, 0 sub ] exp/mono0a/decode_test_yesno/wer_10_0.0``` 即安装成功。
 
 ![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202303/20230308145603.png)
 
@@ -56,32 +56,43 @@ Kaldi数据准备：4个文件
 
 统计一共有多少条音频：
 ```bash
-find ./wav/ -iname "*.wav" | wc -l
+find /data/AISHELL-sample/wav -iname "*.wav" | wc -l
 ```
 ## **wav.scp**
 
-```
+```bash
 find /data/AISHELL-sample/wav -iname '*.wav' > wav.scp.temp
 ```
-使用上述命令得到所有 .wav 文件的绝对路径，并写入 wav.scp.temp 文件
+使用上述命令得到所有 .wav 文件的绝对路径，并写入 `wav.scp.temp` 文件
 
-TODO https://blog.csdn.net/weixin_41126303/article/details/120837111
+```bash
+cat wav.scp.temp | awk -F '/' '{printf("%s\n",$NF)}' | sed 's|.wav||' > wav_id
+```
+使用 awk 指定 '/' 为分隔符，过滤得到最后一个 field ($NF)，使用 sed 将 .wav 替换为空生成 `wav_id` 文件
 
-使用 awk 指定 '/' 为分隔符，过滤得到最后一个 field ($NF)，使用 sed 将 .wav 替换为空生成 wav_id 文件
 
-TODO https://blog.csdn.net/weixin_41126303/article/details/120837111
-
-将 wav_id 和 wav.scp.temp (path 文件) 按列拼接
+```bash
+paste -d ' ' wav_id wav.scp.temp > wav.scp
+```
+将 `wav_id` 和 `wav.scp.temp` (path 文件) 按列拼接
 
 ## text
 
-TODO
+使用 `python / shell` 根据 `wav_id` 得到 `text` 文件 (`[utt-id] [text-content]`)
 
 ## utt2spk & spk2utt
 
-spk_id 的获取：
-
-TODO
+从 `wav_id` 获取 `spk_id`：
+```bash
+cut -c 7-11 wav_id > spk_id
+```
+![](https://raw.githubusercontent.com/FYJNEVERFOLLOWS/Picture-Bed/main/202303/20230309131120.png)
+```bash
+paste -d ' ' wav_id spk_id > utt2spk
+```
+```bash
+paste -d ' ' spk_id wav_id > spk2utt
+```
 
 至此，4 个文件全部准备完毕。需要对 text 中的说话内容进行分词
 
