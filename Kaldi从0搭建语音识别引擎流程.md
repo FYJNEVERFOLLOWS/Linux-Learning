@@ -4,9 +4,28 @@
 
 需要在 Linux 上完成 Kaldi 的安装
 
-下载链接
+```bash
+git clone https://github.com/kaldi-asr/kaldi.git
+```
+**cd to `/kaldi` and follow `INSTALL` instructions**
+```
+This is the official Kaldi INSTALL. Look also at INSTALL.md for the git mirror installation.
+[Option 1 in the following does not apply to native Windows install, see windows/INSTALL or following Option 2]
 
-**cd to /kaldi and follow INSTALL instructions**
+Option 1 (bash + makefile):
+
+  Steps:
+    (1)
+    go to tools/  and follow INSTALL instructions there.
+
+    (2)
+    go to src/ and follow INSTALL instructions there.
+
+Option 2 (cmake):
+
+    Go to cmake/ and follow INSTALL.md instructions there.
+    Note, it may not be well tested and some features are missing currently.
+```
 
 验证安装成功：
 
