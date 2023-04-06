@@ -7,19 +7,19 @@
 [#]: publisher: " "
 [#]: url: " "
 
-Open source mind mapping with Draw.io
+使用开源思维导图 Draw.io
 ======
-Next time you need to brainstorm, organize ideas, or plan a project,
-start with Draw.io.
+
+下次你需要头脑风暴、组织想法或计划项目时，不妨试试 Draw.io
 ![Looking at a map for career journey][1]
 
-There's something special about maps. I remember opening the front book cover of JRR Tolkien's _The Hobbit_ when I was younger, staring at the hand-drawn map of Middle Earth, and feeling the wealth of possibility contained in the simple drawing. Aside from their obvious purpose of actually describing where things are in relation to other things, I think maps do a great job of expressing potential. You could step outside and take the road this way or that way, and if you do, just think of all the new and exciting things you'll be able to see.
+地图有一些特别之处。我记得小时候打开托尔金《*霍比特人*》的封面，盯着手绘的中土世界地图，感受简单的图画中蕴含着丰富的可能性。除了描述事物与其他事物之间的关系这一明显目的外，我认为地图在表达可能性方面做得很好。你可以到户外去，沿着这条路或那条路走，如果你这样做了，去想想你将能够看到的所有新的、令人兴奋的事物。
 
-Maps don't have to be literal to be valuable and full of possibility, though. Some maps describe a thought process, plan, algorithm, or even random ideas desperately trying to fit together in a potential work of art. Call them "mind maps" or "flowcharts" or "idea boards." They're easy to make with the open source [Draw.io][2] application.
+尽管如此，地图并不一定是有价值和充满可能性的文字。有些地图描述了一个思维过程、计划、算法，甚至是一些随机的想法，这些想法拼命地想要组合成一件潜在的艺术作品。称之为“思维导图”、“流程图”或“创意板”。可以用开源的 [Draw.io][2] 应用程序去很容易地制作。
 
-### Install Draw.io
+### 安装 Draw.io
 
-Draw.io is designed as an open source online app, so you can either use it as an online application, download the [desktop version][3], or [clone the Git repository][4] and host it on your own server.
+Draw.io 被设计为一个开源的在线应用程序，因此你可以将其作为在线应用程序使用，下载[桌面版本][3]，或[克隆Git存储库][4]并将其托管在您自己的服务器上。
 
 ### Mapping with Draw.io
 
@@ -31,6 +31,7 @@ The Draw.io interface has a big workspace in the center, the main toolbar on the
 
 (Seth Kenlon, [CC BY-SA 4.0][6])
 
+工作流程简单：
 The workflow is simple: 
 
   1. Select a shape from the left toolbar.
