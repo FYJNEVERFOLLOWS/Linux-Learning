@@ -1,103 +1,90 @@
+#! https://zhuanlan.zhihu.com/p/620958845
 [#]: subject: "Open source mind mapping with Draw.io"
 [#]: via: "https://opensource.com/article/21/12/open-source-mind-mapping-drawio"
 [#]: author: "Seth Kenlon https://opensource.com/users/seth"
 [#]: collector: "lujun9972"
 [#]: translator: "FYJNEVERFOLLOWS"
-[#]: reviewer: " "
-[#]: publisher: " "
-[#]: url: " "
+[#]: reviewer: "wxy"
+[#]: publisher: "wxy"
+[#]: url: "https://linux.cn/article-15700-1.html"
 
 使用开源思维导图 Draw.io
 ======
 
-下次你需要头脑风暴、组织想法或计划项目时，不妨试试 Draw.io
-![Looking at a map for career journey][1]
+> 下次你需要头脑风暴、组织想法或计划项目时，不妨试试 Draw.io。
 
-地图有一些特别之处。我记得小时候打开托尔金《*霍比特人*》的封面，盯着手绘的中土世界地图，感受简单的图画中蕴含着丰富的可能性。除了描述事物与其他事物之间的关系这一明显目的外，我认为地图在表达可能性方面做得很好。你可以到户外去，沿着这条路或那条路走，如果你这样做了，去想想你将能够看到的所有新的、令人兴奋的事物。
+![][0]
 
-尽管如此，地图并不一定是有价值和充满可能性的文字。有些地图描述了一个思维过程、计划、算法，甚至是一些随机的想法，这些想法拼命地想要组合成一件潜在的艺术作品。称之为“思维导图”、“流程图”或“创意板”。可以用开源的 [Draw.io][2] 应用程序去很容易地制作。
+地图有一些特别之处。我记得小时候打开托尔金《霍比特人》的封面，盯着手绘的中土世界地图，感受简单的图画中蕴含着丰富的可能性。除了描述事物与其他事物之间的关系这一明显目的外，我认为地图在表达可能性方面做得很好。你可以到户外去，沿着这条路或那条路走，如果你这样做了，去想想你将能够看到的所有新的、令人兴奋的事物。
+
+尽管如此，地图并不一定是有价值和充满可能性的文字。有些地图描述了一个思维过程、计划、算法，甚至是一些随机的想法，这些想法拼命地想要组合成一件潜在的艺术作品，它们被称之为“思维导图”、“流程图”或“创意板”。可以用开源的 [Draw.io][2] 应用程序去很容易地制作。
 
 ### 安装 Draw.io
 
-Draw.io 被设计为一个开源的在线应用程序，因此你可以将其作为在线应用程序使用，下载[桌面版本][3]，或[克隆Git存储库][4]并将其托管在您自己的服务器上。
+Draw.io 是一个开源的在线应用程序，因此你可以将其作为在线应用程序使用，下载 [桌面版本][3]，或 [克隆 Git 存储库][4] 并将其托管在你自己的服务器上。
 
-### Mapping with Draw.io
+### 使用 Draw.io 画图
 
-When you first start Draw.io, you need to choose where you want to save your data. If you're hosting Draw.io yourself, your choices depend on which API keys you have access to. You can choose from several online storage services for the online public instance, depending on what you've got an account for. If you don't want to store your data on somebody else's server, you can also choose to save your work on a local drive. If you're unsure yet, you can click **Decide later** to continue into the app without choosing anything.
+当你第一次启动 Draw.io 时，你需要选择保存数据的位置。如果你自己托管 Draw.io，你的选择取决于你可以访问哪些 API 密钥。你可以从几个在线存储服务中为在线公共实例进行选择，这取决于你的帐户。如果你不想把你的数据存储在别人的服务器上，你也可以选择把你的工作保存在本地存储上。如果你还不确定，可以单击 “<ruby>稍后决定<rt>Decide later</rt></ruby>” 继续进入应用程序，而无需选择任何内容。
 
-The Draw.io interface has a big workspace in the center, the main toolbar on the left, a toolbar along the top, and a properties panel on the right.
+Draw.io 的交互界面中间有一个很大的工作空间，左边是主工具栏，顶部是工具栏，右边是属性面板。
 
 ![Draw.io interface][5]
 
-(Seth Kenlon, [CC BY-SA 4.0][6])
+工作流程很简单：
 
-工作流程简单：
-The workflow is simple: 
+  1. 从左侧工具栏中选择一个形状。
+  2. 在工作空间中编辑形状。
+  3. 添加另一个形状，并连接它们。
 
-  1. Select a shape from the left toolbar.
-  2. Edit the shape in the workspace.
-  3. Add another shape, and connect them.
-
-
-
-Repeat that process, and you've got a map.
+重复这个过程，你就得到了一张图。
 
 ![Draw.io example][7]
 
-(Seth Kenlon, [CC BY-SA 4.0][6])
+### 项目规划
 
-### Project planning
+当你第一次接受一项大任务时，你通常对你想要的结果有一个非常清晰的想法。假设你想开始一个社区项目来画一幅壁画。你想要的结果是一幅壁画。它很容易定义，你可以或多或少地在脑海中描绘出结果。
 
-When you first take on a big task, you often have a pretty clear idea of your desired outcome. Say you want to start a community project to paint a mural. Your desired outcome is a mural. It's pretty easy to define, and you can more or less picture the results in your mind's eye.
+然而，一旦你开始朝着目标前进，你就必须开始弄清楚细节。壁画应该画在哪里？即便知道画在哪，你如何获得在公共墙上作画的许可的？油漆呢？你应该用一种特殊的油漆吗？你会用刷子还是喷枪涂油漆？你需要什么样的专业设备来喷漆？画一幅壁画需要多少人和多长时间？画家工作时的支持服务怎么样？最后，这幅画是关于什么的？一个想法很快就会变得势不可挡，因为你离实现它越近。
 
-Once you start moving toward your goal, however, you have to start figuring out the details. Where should the mural be painted? How do you get permission to paint on a public wall, anyway? What about paint? Is there a special kind of paint you ought to use? Will you apply the paint with brushes or airbrushes? What kind of specialized equipment do you need for painting? How many people and hours will it take to paint a mural? What about support services for the painters while they work? And what's the painting going to be about, anyway? A single idea can very quickly become overwhelming the closer you get to making it happen.
+这不仅仅适用于绘制壁画、制作戏剧或电影。它几乎适用于任何不平凡的努力。这正是像 Draw.io 这样的应用程序可以帮助绘制的。
 
-This doesn't just apply to painting murals, producing a play, or making a movie. It applies to nearly any non-trivial endeavor. And it's exactly what an application like Draw.io can help map out.
+以下是如何使用 Draw.io 创建项目流程图：
 
-Here's how you can use Draw.io to create a project flowchart:
+  1. 从头脑风暴开始。没有什么想法是太小或太大的。为每个想法制作一个框，然后双击 Draw.io 工作空间中的框以输入文本。
+  2. 一旦在工作空间中你产生了可能想到的所有想法，就可以将它们拖放到相关的组中。我们的目标是创建一些小任务云或集群，因为它们是同一过程的一部分，所以或多或少会一起进行。
+  3. 一旦你确定了相关任务的集群，就为这些任务命名。例如，如果你正在绘制壁画，那么任务可能是 “许可”、“设计”、“购买”、“绘制”，这反映出你需要首先获得当地政府的许可，然后设计壁画，然后购买用品，最后绘制壁画。每个任务都有组成部分，但大体上，你现在已经确定了项目的工作流程。
+  4. 用箭头连接主要任务。并不是所有的过程都是完全线性的。例如，在你获得市议会的许可后，一旦你设计了你打算画的东西，你可能必须回到他们那里进行最终批准。这很正常。这是一个循环，有一些来回，但最终，你会突破这个循环，进入下一阶段。
+  5. 掌握好你的流程图，完成每一项任务，直到你达到最终目标。
 
-  1. Start with a brainstorming session. No thoughts are too trivial or big. Make a box for every idea, and double-click the box in the Draw.io workspace to enter text.
-  2. Once you have all the ideas you can possibly think of on your workspace, drag and drop them into related groups. The goal is to create little clouds, or clusters, of tasks that more or less go together because they're part of the same process.
-  3. Once you've identified the clusters of related tasks, give those tasks a name. For instance, if you're painting a mural, then the tasks might be _approval_, _design_, _purchase_, _paint_, reflecting that you need to get permission from your local government first, then design the mural, then purchase the supplies, and finally paint the mural. Each task has component parts, but broadly you've now determined the workflow for your project.
-  4. Connect the major tasks with arrows. Not all processes are entirely linear. For instance, after you've obtained permission from your city council, you might have to come back to them for final approval once you've designed what you intend to paint. That's normal. It's a loop, there's some back and forth, but eventually, you break out of the loop to proceed to the next stage.
-  5. Armed with your flowchart, work through each task until you've reached your ultimate goal.
+### 思维导图
 
+思维导图往往不是关于进步，而是关于保持某种状态或对许多想法进行展望。例如，假设你已经决定减少生活中的浪费。你对自己能做什么有一些想法，但你想组织和保存你的想法，这样你就不会忘记它们。
 
+以下是如何使用 Draw.io 创建思维导图：
 
-### Mind mapping 
-
-Mind maps tend to be less about progress and more about maintaining a certain state or putting many ideas into perspective. For instance, suppose you've decided to reduce the amount of waste in your life. You have some ideas about what you can do, but you want to organize and preserve your ideas, so you don't forget them.
-
-Here's how you can use Draw.io to create a mind map:
-
-  1. Start with a brainstorming session. No thoughts are too trivial or big. Make a box for every idea, and double-click the box in the Draw.io workspace to enter text. You can also give boxes a background color by selecting the box and clicking a color swatch in the right properties panel.
-  2. Arrange your ideas into groups or categories.
-  3. Optionally, connect ideas with arrows that relate directly to one another.
-
-
+  1. 从头脑风暴开始。没有什么想法是太琐碎或太大的。为每个想法制作一个框，然后双击 Draw.io 工作空间中的框以输入文本。也可以通过选择框并单击右侧属性面板中的色样，为框指定背景色。
+  2. 将你的想法分组或分类。
+  3. 可以选择将想法与彼此直接相关的箭头连接起来。
 
 ![Draw.io waste reduction example][8]
 
-(Seth Kenlon, [CC BY-SA 4.0][6])
+### 保存你的图表
 
-### Saving your diagram
+你可以将图表保存为 PNG、JPG 图像、Draw.io XML 或纯 XML 文件。如果将其另存为 XML，则可以在 Draw.io 中再次打开它进行进一步编辑。导出的图像非常适合与他人共享。
 
-You can save your diagram as a PNG, JPG image, Draw.io XML, or plain XML file. If you save it as XML, you can open it again in Draw.io for further editing. An exported image is great for sharing with others.
+### 使用 Draw.io
 
-### Use Draw.io
-
-There are many great diagramming applications, but I don't make diagrams often, so having Draw.io available is convenient at a moment's notice. Its interface is simple and easy to use, and the results are clean and professional. Next time you need to brainstorm, organize ideas, or plan a project, start with Draw.io.
+有很多很棒的绘图应用程序，但我不经常制作图表，所以可以随时使用 Draw.io。它的界面简单易用，结果干净专业。下次当你需要头脑风暴、组织想法或计划项目时，可以试试 Draw.io。
 
 --------------------------------------------------------------------------------
+本文使用 [CC BY-SA 4.0 国际协议](https://creativecommons.org/licenses/by-sa/4.0/deed.zh) 进行许可，欢迎 **遵照协议规定** 转载。
 
-via: https://opensource.com/article/21/12/open-source-mind-mapping-drawio
+作者：[Seth Kenlon](https://opensource.com/users/seth) / 译者：[FYJNEVERFOLLOWS](https://github.com/FYJNEVERFOLLOWS) / 校对：[wxy](https://github.com/wxy)
 
-作者：[Seth Kenlon][a]
-选题：[lujun9972][b]
-译者：[FYJNEVERFOLLOWS](https://github.com/FYJNEVERFOLLOWS)
-校对：[校对者ID](https://github.com/校对者ID)
+原文: [Open source mind mapping with Draw.io](https://opensource.com/article/21/12/open-source-mind-mapping-drawio)
 
-本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
+首发：[使用开源思维导图 Draw.io](https://linux.cn/article-15700-1.html) @ [Linux中国](https://linux.cn/)
 
 [a]: https://opensource.com/users/seth
 [b]: https://github.com/lujun9972
@@ -109,3 +96,4 @@ via: https://opensource.com/article/21/12/open-source-mind-mapping-drawio
 [6]: https://creativecommons.org/licenses/by-sa/4.0/
 [7]: https://opensource.com/sites/default/files/uploads/draw-io-example.jpg (Draw.io example)
 [8]: https://opensource.com/sites/default/files/uploads/draw-io-export.jpg (Draw.io waste reduction example)
+[0]: https://img.linux.net.cn/data/attachment/album/202304/07/144214m945y0naawn5zb95.jpg
